@@ -1,0 +1,143 @@
+body {
+    background-image: url('/static/pic3.jpg');
+    color: #dee3e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom right, #434343, #02fa13);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .title {
+    font-size: 1.5rem;
+}
+
+.header .profile {
+    position: relative;
+    padding-right: 30px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('/static/user.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #52b9b7;
+    color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    padding: 10px;
+    text-align: left;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.profile-menu p {
+    margin: 10px 0;
+}
+
+.profile-menu .logout {
+    color: red;
+    cursor: pointer;
+}
+
+.profile-menu .hide-menu {
+    color: blue;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.flashcard:hover {
+    transform: translateY(-5px);
+}
+
+.flashcard::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(to bottom right, #434343, #02fa13);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.left-side,
+.right-side {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.left-side {
+    margin-right: 20px;
+}
+
+.right-side {
+    margin-left: 20px;
+}

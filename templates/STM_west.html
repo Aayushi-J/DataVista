@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Sales Team Member</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">DATA VISTA</div>
+        <div class="profile">
+            <div class="profile-icon" onclick="toggleProfileMenu()"></div>
+            <div class="profile-menu" id="profileMenu">
+                <p><strong>First Name:</strong> {{ first_name }}</p>
+                <p><strong>Role:</strong> {{ role_name }}</p>
+                <button class="logout" onclick="logout()">Logout</button>
+                <button class="hide-menu" onclick="hideProfileMenu()">Hide</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="flashcard">
+            <div class="left-side"><span>S<br>a<br>l<br>e<br>s<br>T<br>e<br>a<br>m</span></div>
+            <div class="container">
+                <iframe title="Info Data_Vista (SM-West)" src="https://app.powerbi.com/view?r=eyJrIjoiNzI5Mjg3ZmUtMjQ4Ny00MThmLTljZjQtMGQwZjViZjQwMzJjIiwidCI6IjI2OTI1ZTM4LTVkMzktNDJiMy1hMDgzLWE2OTNkNjllODgzMCJ9&pageName=ReportSection641dfa30839742c7a74b" frameborder="0" allowFullScreen="true"></iframe>
+            </div>  
+            <div class="right-side"><span><br>W<br>e<br>s<br>t</span></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleProfileMenu() {
+            var profileMenu = document.getElementById('profileMenu');
+            profileMenu.classList.toggle('show');
+        }
+
+        function hideProfileMenu() {
+            var profileMenu = document.getElementById('profileMenu');
+            profileMenu.classList.remove('show');
+        }
+
+        function logout() {
+            window.location.href = "{{ url_for('logout') }}";
+        }
+        document.addEventListener('click', function(event) {
+            var profileMenu = document.getElementById('profileMenu');
+            var profileIcon = document.querySelector('.profile-icon');
+            if (!profileMenu.contains(event.target) && !profileIcon.contains(event.target)) {
+                profileMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+
+</html>
