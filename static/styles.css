@@ -1,0 +1,220 @@
+body {
+    background-image: url('/static/pic3.jpg');
+    color: #dee3e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom , #434343, #02fa13);
+    background: linear-gradient(to bottom right, #434343, #02fa13);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .title {
+    font-size: 1.65rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.3s;
+}
+
+.header .title:hover {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.header .profile {
+    position: relative;
+    padding-right: 35px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('/static/user.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: padding 0.3s, box-shadow 0.3s;
+    z-index: -1;
+}
+
+.profile-icon:hover::before {
+    padding: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    left: -175px;
+    top: 50px;
+    font-size: 1.15rem;
+    background-color: #5aabb3;
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(7, 7, 7, 0.2);
+    width: 200px;
+    padding: 20px 10px 10px;
+    text-align: center;
+    z-index: 100;
+    flex-direction: column;
+    transition: box-shadow 0.3s;
+}
+
+.profile-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    transition: box-shadow 0.3s;
+    z-index: -1;
+}
+
+.profile-menu:hover::before {
+    box-shadow: inset 0 0 10px rgba(9, 109, 167, 0.5);
+}
+
+.profile-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-menu p {
+    margin: 10px 0;
+}
+
+.profile-menu button {
+    display: block;
+    width: 50%;
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin: 10px auto;
+    color: #fff;
+    background-color: #c16565;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-menu button:hover {
+    background-color: #f44336;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-menu .hide-menu {
+    background-color: #454ea0;
+}
+
+.profile-menu .hide-menu:hover {
+    background-color: #113a91;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+/*.flashcard:hover {
+    transform: translateY(-2px);
+}*/
+
+.flashcard::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(to bottom right, #434343, #02fa13);
+    border-radius: 20px;
+    z-index: -1;
+    transition: box-shadow 0.3s;
+}
+
+.flashcard:hover::before {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.left-side,
+.right-side {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.left-side {
+    margin-right: 10px;
+}
+
+.right-side {
+    margin-left: 10px;
+}
